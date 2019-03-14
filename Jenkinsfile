@@ -16,5 +16,14 @@ pipeline {
         echo "take care of js files"
       }
     }
+    
+    stage("three") {
+      when {
+        branch '*test*'
+      }
+      steps{
+        echo "three"
+      }
+    }
   }
 }
