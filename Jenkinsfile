@@ -10,8 +10,10 @@ pipeline {
     
     stage("two"){
       when {
-        changeset '**/*.js'
-        changeset '**/*.html'
+        anyOf {
+          changeset '**/*.js'
+          changeset '**/*.html'
+        }
       }
       steps{
         echo "take care of js files"
