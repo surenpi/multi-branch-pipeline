@@ -11,8 +11,8 @@ pipeline {
     stage("two"){
       when {
         anyOf {
-          changeset '**/*.js'
-          changeset '**/*.html'
+          changeset '**/**/*.js'
+          changeset '**/**/*.html'
         }
       }
       steps{
