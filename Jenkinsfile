@@ -28,5 +28,14 @@ pipeline {
         echo "three"
       }
     }
+
+    stage("release") {
+      when {
+        tag pattern: "release-.*", comparator: "REGEXP"
+      }
+      steps{
+        echo "released successfully"
+      }
+    }
   }
 }
