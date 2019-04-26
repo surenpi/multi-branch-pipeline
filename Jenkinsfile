@@ -7,7 +7,9 @@ pipeline {
         echo "one"
         echo "BRANCH_NAME" + env.BRANCH_NAME
         
-        pullRequest.addLabel('testing')
+        script {
+          pullRequest.addLabel('testing')
+        }
       }
     }
     
