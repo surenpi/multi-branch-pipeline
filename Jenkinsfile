@@ -13,8 +13,7 @@ pipeline {
         script {
           pullRequest.addLabel('testing')
           
-          pullRequest.switchPullRequest(2)
-          pullRequest.addLabel('testing')
+          pullRequest.switchPullRequest(2).addLabel('testing')
         }
       }
     }
@@ -32,6 +31,19 @@ pipeline {
     }
     
     stage("three") {
+      when {
+        branch 'master'
+      }
+      steps{
+        echo "master"
+
+        script {
+          pullRequest.switchPullRequest(2).removeLabel('ready-for-merge')
+        }
+      }
+    }
+    
+    stage("four") {
       when {
         branch '*test*'
       }
