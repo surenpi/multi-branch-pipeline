@@ -46,7 +46,7 @@ pipeline {
   
   post{
     always{
-      echo currentBuild.duration
+      print currentBuild.duration
     }
   }
 }
