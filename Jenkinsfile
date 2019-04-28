@@ -43,4 +43,10 @@ pipeline {
       }
     }
   }
+  
+  post{
+    always{
+      echo currentBuild.duration
+    }
+  }
 }
