@@ -9,6 +9,9 @@ pipeline {
         
         script {
           pullRequest.addLabel('testing')
+          
+          pullRequest.switchPullRequest(2)
+          pullRequest.addLabel('testing')
         }
       }
     }
