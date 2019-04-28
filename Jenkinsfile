@@ -3,6 +3,9 @@ pipeline {
   
   stages{
     stage("one") {
+      when {
+        changeRequest()
+      }
       steps{
         echo "one"
         echo "BRANCH_NAME" + env.BRANCH_NAME
