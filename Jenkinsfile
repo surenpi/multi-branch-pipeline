@@ -60,6 +60,14 @@ pipeline {
         echo "released successfully"
       }
     }
+    
+    stage("files"){
+      steps{
+        for (commitFile in pullRequest.files) {
+            echo "SHA: ${commitFile.sha} File Name: ${commitFile.filename} Status: ${commitFile.status}"
+        }
+      }
+    }
   }
   
   post{
