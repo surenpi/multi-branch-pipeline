@@ -38,7 +38,7 @@ pipeline {
         echo "master"
 
         script {
-          pullRequest.switchPullRequest(2).removeLabel('ready-for-merge')
+          pullRequest.removeLabel('ready-for-merge')
         }
       }
     }
