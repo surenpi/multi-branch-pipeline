@@ -2,7 +2,10 @@ pipeline {
   agent {
     label 'master'
   }
-  
+  parameters {
+  gitParameter branch: '', branchFilter: '.*', defaultValue: '', description: '', name: 'git', quickFilterEnabled: false, selectedValue: 'NONE', sortMode: 'NONE', tagFilter: '*', type: 'PT_PULL_REQUEST'
+}
+
   stages{
     stage("one") {
       when {
